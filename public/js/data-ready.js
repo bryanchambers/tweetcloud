@@ -6,9 +6,12 @@ function dataReady(type, query, data, id_prev, count_all, tweets_all) {
 		var count  = data.count;
 		count_all += count;
 		var max_tweets = 1000;
+		
+		$('#status').text('Loading tweets...');
 
 		var progress = Math.round((count_all / max_tweets) * 100, 0);
 		if(progress > 100) { progress = 100; }
+		if(progress < 5) { progress = 5; }
 		$('#progress').css('width', progress + '%');
 
 		if(id_prev == 0) { id_prev = id + 1000; }

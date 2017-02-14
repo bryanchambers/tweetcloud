@@ -34,5 +34,5 @@ function buildCloud2(wordcount) {
 		draw.fillText(word, x, y);
 	}
 
-	$('#status').text('Done!');
+	$('#status').text('');
 }

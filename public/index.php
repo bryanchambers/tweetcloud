@@ -24,38 +24,54 @@
 			display: inline-block;
 			border: 1px solid gray;
 		}
-		#loading {
+		#progress-div, #status {
 			display: none;
 		}
 		#cloud {
 			width: 100%;
 		}
+		.spacer-sm {
+			height: 20px;
+		}
+		.spacer-lg {
+			height: 35px;
+		}
 	</style>
 </head>
+
 <body>
 	<div class='container text-center'>
 		<div class='row'><div class='col-md-12'>
 			<h1>Tweet Cloud</h1>
 		</div></div>
+		
+		<div class='row'><div class='col-md-12 spacer-sm'></div></div>
+		
+		<div class='row'>
+			<form>
+				<div class='col-md-5 col-md-offset-3'>
+					<input id='query-input' class='form-control' name='query' type='text' placeholder='search query'></input>
+				</div>
 
-		<div class='row text-left'><div class='col-md-6 col-md-offset-3'>
-		<form>
-			<div class='form-group'>
-				<label>Search Query</label>
-				<input id='query-input' class='form-control' name='query' type='text'></input>
+				<div class='col-md-1 text-right'>
+					<button id='button' class='btn btn-primary'>&nbsp; Go! &nbsp;</button>
+				</div>
+			</form>
+		</div>
+
+		<div class='row'><div class='col-md-12 spacer-sm'></div></div>
+
+		<div class='row'><div class='col-md-6 col-md-offset-3'>
+			<div id='progress-div' class="progress">
+  				<div id="progress" class="progress-bar" role="progressbar" style="width: 0"></div>
 			</div>
-
-			<button id='button' class='btn btn-primary'>Go!</button>
-		</form>
 		</div></div>
 
 		<div class='row'><div class='col-md-6 col-md-offset-3'>
-			<div class="progress">
-  				<div id='progress' class="progress-bar" role="progressbar" style="width: 0">
-  					<span id='status'>Status</span>
-  				</div>
-			</div>
+  			<span id='status'>Status</span>
 		</div></div>
+		
+		<div class='row'><div class='col-md-12 spacer-lg'></div></div>
 		
 		<div class='row'><div class='col-md-12'>
 			<canvas id='cloud'></canvas>

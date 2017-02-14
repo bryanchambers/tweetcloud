@@ -14,8 +14,11 @@ $(document).ready(function() {
 
 function initSearch() {
 	$('#cloud').empty();
-	$('#progress').css('width', '0');
+	$('#progress').css('width', '5%');
 	$('#status').text('Searching...');
+
+	$('#progress-div').fadeIn();
+	$('#status').fadeIn();
 
 	var query = $('#query-input').val();
 	getData('search', query, 0, 0, '');
